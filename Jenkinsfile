@@ -1,19 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('Notify-Event') {
+    stage('Event notification') {
       steps {
-        sh '''pipeline {
-    agent none
-    stages {
-        stage(\'Publish Event\') {
-            steps {
-                publishEvent simpleEvent(\'SamanEvent\')
-            }
-        }
-    }
-}'''
-        }
+        echo 'Notify event'
       }
     }
   }
+}
